@@ -10,7 +10,7 @@ export function LandingPageComponent() {
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-          <Mic className="h-8 w-8" />
+          <Image src="/logo.png" alt="InvocalizeAI Logo" width={64} height={64} />
           <span className="text-2xl font-bold">InvocalizeAI</span>
         </Link>
         <nav className="hidden md:flex space-x-4">
