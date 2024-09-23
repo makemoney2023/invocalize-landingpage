@@ -8,7 +8,7 @@ import Link from "next/link"
 export function LandingPageComponent() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <header className="container mx-auto px-4 py-6 flex justify-between items-center">
+      <header className="container mx-auto px-4 py-6 flex justify-between items-center relative z-10">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/logo.png" alt="InvocalizeAI Logo" width={64} height={64} />
           <span className="text-2xl font-bold">InvocalizeAI</span>
@@ -22,83 +22,92 @@ export function LandingPageComponent() {
       </header>
 
       <main>
-        <section className="container mx-auto px-4 py-20 relative">
-          <div className="absolute inset-0 overflow-hidden">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 w-full h-[125%] top-[-25%]">
             <Image
               src="/soundwave.png"
               alt="AI Voice Interaction"
               layout="fill"
               objectFit="cover"
               quality={100}
-              className="opacity-75"
+              className="opacity-90"
             />
           </div>
-          <div className="relative z-10 flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 space-y-6">
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                AI Voice Agents: Your Virtual Assistants, Reimagined.
-              </h1>
-              <p className="text-xl text-gray-300">
-                Experience the future of voice interaction with our cutting-edge AI voice agents. Tailored to your specific needs, these intelligent assistants provide seamless, natural conversations, enhancing efficiency and productivity across various industries.
-              </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
-                Get a demo
-              </Button>
+          
+          <section className="container mx-auto px-4 py-20 relative z-10">
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-1/2 space-y-6">
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                  AI Voice Agents: Your Virtual Assistants, Reimagined.
+                </h1>
+                <p className="text-xl text-gray-300">
+                  Experience the future of voice interaction with our cutting-edge AI voice agents. Tailored to your specific needs, these intelligent assistants provide seamless, natural conversations, enhancing efficiency and productivity across various industries.
+                </p>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+                  Get a demo
+                </Button>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="features" className="bg-black py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-400">
-              Powerful Features of InvocalizeAI
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <FileAudio className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Voice Transcription</h3>
-                <p className="text-gray-300">
-                  Accurately convert spoken words into text, enabling easy documentation and analysis of voice interactions.
-                </p>
-              </div>
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <Wifi className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Real-Time Data Connectivity</h3>
-                <p className="text-gray-300">
-                  Access and process live data streams, allowing for up-to-the-minute information and decision-making.
-                </p>
-              </div>
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <PlayCircle className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Seamless Task Execution</h3>
-                <p className="text-gray-300">
-                  Effortlessly perform complex tasks through voice commands, streamlining workflows and boosting productivity.
-                </p>
-              </div>
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <Heart className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Sentiment Analysis</h3>
-                <p className="text-gray-300">
-                  Understand and interpret emotional tones in conversations, enhancing customer service and user experience.
-                </p>
-              </div>
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <LinkIcon className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">API Integrations</h3>
-                <p className="text-gray-300">
-                  Seamlessly connect with various third-party services and platforms, expanding the capabilities of your AI voice agents.
-                </p>
-              </div>
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <MoreHorizontal className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">And More...</h3>
-                <p className="text-gray-300">
-                  Discover additional cutting-edge features designed to revolutionize your voice interaction experience.
-                </p>
+          <section id="features" className="bg-black bg-opacity-60 py-16 relative z-10">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-400 text-shadow">
+                Powerful Features of InvocalizeAI
+              </h2>
+              {/* Add the following style to your global CSS or component styles */}
+              <style jsx global>{`
+                .text-shadow {
+                  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+                }
+              `}</style>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                  <FileAudio className="h-12 w-12 text-blue-400 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Voice Transcription</h3>
+                  <p className="text-gray-300">
+                    Accurately convert spoken words into text, enabling easy documentation and analysis of voice interactions.
+                  </p>
+                </div>
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                  <Wifi className="h-12 w-12 text-blue-400 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Real-Time Data Connectivity</h3>
+                  <p className="text-gray-300">
+                    Access and process live data streams, allowing for up-to-the-minute information and decision-making.
+                  </p>
+                </div>
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                  <PlayCircle className="h-12 w-12 text-blue-400 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Seamless Task Execution</h3>
+                  <p className="text-gray-300">
+                    Effortlessly perform complex tasks through voice commands, streamlining workflows and boosting productivity.
+                  </p>
+                </div>
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                  <Heart className="h-12 w-12 text-blue-400 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">Sentiment Analysis</h3>
+                  <p className="text-gray-300">
+                    Understand and interpret emotional tones in conversations, enhancing customer service and user experience.
+                  </p>
+                </div>
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                  <LinkIcon className="h-12 w-12 text-blue-400 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">API Integrations</h3>
+                  <p className="text-gray-300">
+                    Seamlessly connect with various third-party services and platforms, expanding the capabilities of your AI voice agents.
+                  </p>
+                </div>
+                <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                  <MoreHorizontal className="h-12 w-12 text-blue-400 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">And More...</h3>
+                  <p className="text-gray-300">
+                    Discover additional cutting-edge features designed to revolutionize your voice interaction experience.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         <section className="bg-gray-800 py-16">
           <div className="container mx-auto px-4 text-center">
