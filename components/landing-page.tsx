@@ -22,26 +22,29 @@ export function LandingPageComponent() {
       </header>
 
       <main>
-        <section className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              AI Voice Agents: Your Virtual Assistants, Reimagined.
-            </h1>
-            <p className="text-xl text-gray-300">
-              Experience the future of voice interaction with our cutting-edge AI voice agents. Tailored to your specific needs, these intelligent assistants provide seamless, natural conversations, enhancing efficiency and productivity across various industries.
-            </p>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
-              Get a demo
-            </Button>
-          </div>
-          <div className="md:w-1/2 mt-10 md:mt-0">
+        <section className="container mx-auto px-4 py-20 relative">
+          <div className="absolute inset-0 overflow-hidden">
             <Image
-              src="/placeholder.svg"
+              src="/soundwave.png"
               alt="AI Voice Interaction"
-              width={600}
-              height={400}
-              className="rounded-lg"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+              className="opacity-75"
             />
+          </div>
+          <div className="relative z-10 flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 space-y-6">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                AI Voice Agents: Your Virtual Assistants, Reimagined.
+              </h1>
+              <p className="text-xl text-gray-300">
+                Experience the future of voice interaction with our cutting-edge AI voice agents. Tailored to your specific needs, these intelligent assistants provide seamless, natural conversations, enhancing efficiency and productivity across various industries.
+              </p>
+              <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+                Get a demo
+              </Button>
+            </div>
           </div>
         </section>
 
