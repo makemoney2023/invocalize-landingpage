@@ -1,14 +1,16 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Mic, BarChart, Users, Zap, MessageSquare, FileAudio, Wifi, PlayCircle, Heart, MoreHorizontal, Link as LinkIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { redirect } from 'next/navigation'
 
 export function LandingPageComponent() {
+  const router = useRouter()
+
   const handleGetDemo = () => {
-    redirect('https://invocalize-demo.vercel.app/')
+    router.push('https://invocalize-demo.vercel.app/')
   }
 
   return (
