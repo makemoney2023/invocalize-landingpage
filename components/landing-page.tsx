@@ -4,8 +4,13 @@ import { Button } from "@/components/ui/button"
 import { Mic, BarChart, Users, Zap, MessageSquare, FileAudio, Wifi, PlayCircle, Heart, MoreHorizontal, Link as LinkIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { redirect } from 'next/navigation'
 
 export function LandingPageComponent() {
+  const handleGetDemo = () => {
+    redirect('https://invocalize-demo.vercel.app/')
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center relative z-10">
@@ -18,14 +23,14 @@ export function LandingPageComponent() {
           <Link href="#benefits" className="hover:text-blue-400">Benefits</Link>
           <Link href="#testimonial" className="hover:text-blue-400">Testimonial</Link>
         </nav>
-        <Button className="bg-blue-600 hover:bg-blue-700">Get a demo</Button>
+        <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetDemo}>Get a demo</Button>
       </header>
 
       <main>
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 w-full h-[125%] top-[-25%]">
             <Image
-              src="/soundwave.png"
+              src="/soundwave3.png"
               alt="AI Voice Interaction"
               layout="fill"
               objectFit="cover"
@@ -43,7 +48,7 @@ export function LandingPageComponent() {
                 <p className="text-xl text-gray-300">
                   Experience the future of voice interaction with our cutting-edge AI voice agents. Tailored to your specific needs, these intelligent assistants provide seamless, natural conversations, enhancing efficiency and productivity across various industries.
                 </p>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3" onClick={handleGetDemo}>
                   Get a demo
                 </Button>
               </div>
