@@ -10,7 +10,7 @@ export function LandingPageComponent() {
   const router = useRouter()
 
   const handleGetDemo = () => {
-    router.push('https://invocalize-demo.vercel.app/')
+    router.push('https://invocalize-leadform.vercel.app/')
   }
 
   return (
